@@ -23,6 +23,7 @@ class TestFlights {
         flight.addPassenger(passenger);
         flight.addPassenger(passenger2);
         flight.addPassenger(passenger3);
+
     }
 
     @AfterEach
