@@ -14,7 +14,7 @@ class TestPassenger {
 
     @BeforeEach
     void init(){
-        passenger = new Passenger("007","James", "EN");
+        passenger = new Passenger("007","James", "ES");
         passenger2 = new Passenger("001","David", "ES");
         passenger3 = new Passenger("002","Elena", "ES");
     }
@@ -40,7 +40,7 @@ class TestPassenger {
     @Test
     void assertGetCountryCode(){
         assertAll("Chek Countries",
-                () -> assertEquals("EN",passenger.getCountryCode()),
+                () -> assertEquals("ES",passenger.getCountryCode()),
                 () -> assertEquals("ES",passenger2.getCountryCode()),
                 () -> assertEquals("ES",passenger3.getCountryCode())
         );
@@ -48,7 +48,7 @@ class TestPassenger {
 
     @Test
     void assertGetFlight(){
-        Flight flight = new Flight("BOING 747",467);
+        Flight flight = new Flight("BO747",467);
         passenger.setFlight(flight);
         passenger2.setFlight(flight);
         passenger3.setFlight(flight);

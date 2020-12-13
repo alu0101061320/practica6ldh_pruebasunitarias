@@ -16,8 +16,8 @@ class TestFlights {
 
     @BeforeEach
     void init(){
-        flight = new Flight("BOING 747",467);
-        passenger = new Passenger("007","James", "EN");
+        flight = new Flight("BO747",467);
+        passenger = new Passenger("007","James", "ES");
         passenger2 = new Passenger("001","David", "ES");
         passenger3 = new Passenger("002","Elena", "ES");
         flight.addPassenger(passenger);
@@ -35,7 +35,7 @@ class TestFlights {
 
     @Test
     void assertGetFlightNumber(){
-        assertEquals("BOING 747",flight.getFlightNumber());
+        assertEquals("BO747",flight.getFlightNumber());
     }
 
     @Test
@@ -46,7 +46,7 @@ class TestFlights {
     @Test
     void assertAddPassengers(){
         assertAll("Chek Passengers",
-                () -> assertTrue(flight.addPassenger(new Passenger("007", "James", "EN"))),
+                () -> assertTrue(flight.addPassenger(new Passenger("007", "James", "ES"))),
                 () -> assertTrue(flight.addPassenger(new Passenger("001", "David", "ES"))),
                 () -> assertTrue(flight.addPassenger(new Passenger("002", "Elena", "ES")))
                 );
