@@ -34,6 +34,12 @@ public class Passenger {
     private String countryCode;
     private Flight flight;
 
+    /**
+     *
+     * @param identifier
+     * @param name
+     * @param countryCode
+     */
     public Passenger(String identifier, String name, String countryCode) {
         if (!Arrays.asList(Locale.getISOCountries()).contains(countryCode)) {
             throw new RuntimeException("Invalid country code");
@@ -44,22 +50,42 @@ public class Passenger {
         this.countryCode = countryCode;
     }
 
+    /**
+     * getIdentifier()
+     * @return String
+     */
     public String getIdentifier() {
         return identifier;
     }
 
+    /**
+     * getName()
+     * @return String
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * getCountryCode()
+     * @return String
+     */
     public String getCountryCode() {
         return countryCode;
     }
 
+    /**
+     * getFlight(
+     * @return Flight
+     */
     public Flight getFlight() {
         return flight;
     }
 
+    /**
+     * joinFlight(Flight flight)
+     * @param flight
+     */
     public void joinFlight(Flight flight) {
         Flight previousFlight = this.flight;
         if (null != previousFlight) {
@@ -75,6 +101,10 @@ public class Passenger {
         }
     }
 
+    /**
+     * setFlight(Flight flight)
+     * @param flight
+     */
     public void setFlight(Flight flight) {
         this.flight = flight;
     }

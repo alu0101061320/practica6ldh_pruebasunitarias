@@ -36,6 +36,11 @@ public class Flight {
     private static String flightNumberRegex = "^[A-Z]{2}\\d{3,4}$";
     private static Pattern pattern = Pattern.compile(flightNumberRegex);
 
+    /**
+     *
+     * @param flightNumber
+     * @param seats
+     */
     public Flight(String flightNumber, int seats) {
         Matcher matcher = pattern.matcher(flightNumber);
         if (!matcher.matches()) {
@@ -45,14 +50,27 @@ public class Flight {
         this.seats = seats;
     }
 
+    /**
+     * getFlightNumber()
+     * @return String
+     */
     public String getFlightNumber() {
         return flightNumber;
     }
 
+    /**
+     * getNumberOfPassengers()
+     * @return int
+     */
     public int getNumberOfPassengers() {
         return passengers.size();
     }
 
+    /**
+     * addPassenger(Passenger passenger)
+     * @param passenger
+     * @return boolean
+     */
     public boolean addPassenger(Passenger passenger) {
         if (getNumberOfPassengers() >= seats) {
             throw new RuntimeException("Not enough seats for flight " + getFlightNumber());
@@ -61,6 +79,11 @@ public class Flight {
         return passengers.add(passenger);
     }
 
+    /**
+     * removePassenger(Passenger passenger)
+     * @param passenger
+     * @return boolean
+     */
     public boolean removePassenger(Passenger passenger) {
         passenger.setFlight(null);
         return passengers.remove(passenger);
